@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.billettsalg.BillettsalgController">
+   <children>
+      <Text layoutX="194.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Billettsalg">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="93.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fornavn" />
+      <Text layoutX="93.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etternavn" />
+      <Text layoutX="93.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Epost" />
+      <Text layoutX="97.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefonnummer" />
+      <Text layoutX="97.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velg Arrangementet" />
+      <Text layoutX="104.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antall billetter" />
+      <Spinner layoutX="222.0" layoutY="369.0" prefHeight="27.0" prefWidth="97.0" />
+      <TextField layoutX="250.0" layoutY="326.0" />
+      <TextField layoutX="250.0" layoutY="271.0" />
+      <TextField layoutX="250.0" layoutY="215.0" />
+      <TextField layoutX="236.0" layoutY="158.0" />
+   </children>
+</AnchorPane>
