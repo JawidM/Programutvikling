@@ -19,10 +19,10 @@
       <Text layoutX="97.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefonnummer" />
       <Text layoutX="97.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velg Arrangementet" />
       <Text layoutX="104.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antall billetter" />
-      <Spinner layoutX="222.0" layoutY="369.0" prefHeight="27.0" prefWidth="97.0" />
-      <TextField layoutX="250.0" layoutY="326.0" />
-      <TextField layoutX="250.0" layoutY="271.0" />
-      <TextField layoutX="250.0" layoutY="215.0" />
-      <TextField layoutX="236.0" layoutY="158.0" />
+      <Spinner fx:id="spiAntallBilletter" layoutX="222.0" layoutY="369.0" prefHeight="27.0" prefWidth="97.0" />
+      <TextField fx:id="txtTelefonnummer" layoutX="250.0" layoutY="326.0" />
+      <TextField fx:id="txtEpost" layoutX="250.0" layoutY="271.0" />
+      <TextField fx:id="txtEtternavn" layoutX="250.0" layoutY="215.0" />
+      <TextField fx:id="txtFornavn" layoutX="236.0" layoutY="158.0" />
    </children>
 </AnchorPane>
