@@ -18,7 +18,7 @@ public class FXMLController implements Initializable{
     public void initialize (URL url, ResourceBundle rb) {
 
     }
-    //litt informajson
+    
     @FXML
     private void registrereArrangementer(ActionEvent event) throws IOException {
         try{

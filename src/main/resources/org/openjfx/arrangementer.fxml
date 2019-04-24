@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -18,19 +17,20 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Label layoutX="48.0" layoutY="163.0" text="Navn" />
-      <Label layoutX="46.0" layoutY="209.0" text="Artister" />
-      <Label layoutX="50.0" layoutY="123.0" text="Sted" />
-      <Label layoutX="44.0" layoutY="364.0" text="Antall Ledige Plasser" />
-      <ChoiceBox fx:id="chbSted" layoutX="251.0" layoutY="118.0" prefWidth="150.0" />
-      <TextField fx:id="txtNavn" layoutX="243.0" layoutY="163.0" />
-      <TextField fx:id="txtFornavn" layoutX="239.0" layoutY="207.0" />
+      <Text layoutX="49.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type Arrangement" />
+      <Text layoutX="49.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sted" wrappingWidth="29.015138745307922" />
+      <Text layoutX="49.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Navn" />
+      <Text layoutX="48.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist/Leder" />
       <Text layoutX="50.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato" />
-      <Text layoutX="54.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tid" />
-      <DatePicker fx:id="dpDate" layoutX="228.0" layoutY="257.0" />
-      <Spinner fx:id="spiTid" layoutX="251.0" layoutY="300.0" />
-      <Accordion layoutX="54.0" layoutY="177.0" />
-      <Text layoutX="35.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type Arrangement" />
-      <ComboBox fx:id="cobTypeArrangement" layoutX="248.0" layoutY="69.0" prefWidth="150.0" />
+      <Text layoutX="50.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tid/Klokke" />
+      <Text layoutX="42.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antall Ledige Plasser" />
+      <ComboBox fx:id="cbxTypeArrangement" layoutX="248.0" layoutY="69.0" onAction="#typeArrangementValg" prefWidth="160.0" />
+      <ComboBox fx:id="cbxSted" layoutX="248.0" layoutY="113.0" prefHeight="27.0" prefWidth="160.0" />
+      <TextField fx:id="txtNavn" layoutX="248.0" layoutY="156.0" prefWidth="160.0" />
+      <TextField fx:id="txtArtist" layoutX="248.0" layoutY="199.0" prefHeight="27.0" prefWidth="160.0" />
+      <DatePicker fx:id="dpDate" layoutX="248.0" layoutY="243.0" prefHeight="27.0" prefWidth="160.0" />
+      <Spinner fx:id="spiTid" layoutX="248.0" layoutY="287.0" prefWidth="160.0" />
+      <Button layoutX="48.0" layoutY="440.0" mnemonicParsing="false" onAction="#registrer" text="Registrer" />
+      <Label fx:id="label" layoutX="240.0" layoutY="368.0" prefHeight="207.0" prefWidth="226.0" />
    </children>
 </AnchorPane>
