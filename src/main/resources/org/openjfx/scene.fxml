@@ -5,15 +5,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.FXMLController">
    <children>
-      <Button layoutX="161.0" layoutY="97.0" mnemonicParsing="false" onAction="#registrereArrangementer" text="Registrere Arrangementer" />
-      <Button layoutX="161.0" layoutY="169.0" mnemonicParsing="false" onAction="#registrereBilletter" prefHeight="27.0" prefWidth="178.0" text="Billettsalg" />
-      <Button layoutX="161.0" layoutY="249.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="178.0" text="Oversikt" />
-      <Text layoutX="101.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velkommen til Kulturhuset">
+      <Text layoutX="373.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velkommen til Kulturhuset" wrappingWidth="297.84375">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
+      <Button layoutX="114.0" layoutY="234.0" mnemonicParsing="false" onAction="#registrereArrangementer" prefHeight="150.0" prefWidth="200.0" text="Registrere Arrangementer">
+         
+      </Button>
+      <Button layoutX="408.0" layoutY="235.0" mnemonicParsing="false" onAction="#registrereBilletter" prefHeight="150.0" prefWidth="200.0" text="Billettsalg">
+         
+      </Button>
+      <Button layoutX="704.0" layoutY="234.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="200.0" text="Oversikt">
+         
+      </Button>
    </children>
 </AnchorPane>

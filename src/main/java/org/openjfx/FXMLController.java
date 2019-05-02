@@ -16,7 +16,7 @@ public class FXMLController implements Initializable{
     
     @Override
     public void initialize (URL url, ResourceBundle rb) {
-
+        
     }
     
     @FXML
@@ -47,9 +47,5 @@ public class FXMLController implements Initializable{
         } catch (Exception e){
             e.printStackTrace();
         }
-        
-
-    }
-    
-      
+    }     
 }

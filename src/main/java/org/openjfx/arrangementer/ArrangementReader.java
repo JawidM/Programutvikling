@@ -17,9 +17,10 @@ public class ArrangementReader {
 
         try {
             reader = Files.newBufferedReader(Paths.get(path));
+            
             String line = null; // read first line
 
-            // read the rest and create Persons for each line
+            // read the rest and create Arrangement for each line
             while((line=reader.readLine()) != null) {
                 arrangementer.add(parseArrangement(line));
             }
@@ -33,17 +34,21 @@ public class ArrangementReader {
     }
 
     private static Arrangement parseArrangement(String line) throws InvalidArrangementFormatException {
-        // split line string into seks using the separator ";"
-        String[] split = line.split(";");
+        // split line string into seks using the separator ","
+        String[] split = line.split(",");
         if(split.length != 6) {
-            throw new InvalidArrangementFormatException("Must use semicolon ; to separate the three data fields");
+            throw new InvalidArrangementFormatException("Must use comma , to separate the three data fields");
         }
-
         String typeArrangement = split[0];
         String sted = split[1];
         String navn = split[2];
         String artist = split[3];
-        LocalDate dato = LocalDate.parse (split[5]);
+        
+        LocalDate dato = LocalDate.parse (split[4]);
+        //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-mm-yyyy");
+        //String formatedString = dato.format(dtf);
+        
+        
         int tid = parseNumber(split[5], "Velg tida");
 
         return new Arrangement(typeArrangement, sted, navn, artist, dato, tid );
