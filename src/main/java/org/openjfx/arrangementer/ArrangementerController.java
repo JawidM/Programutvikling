@@ -56,6 +56,9 @@ public class ArrangementerController implements Initializable {
     private Button btnSlett;
     
     @FXML
+    private Button btnLagreOppdatering;
+    
+    @FXML
     private Spinner <Integer> spiTid;
     
     @FXML
@@ -105,6 +108,8 @@ public class ArrangementerController implements Initializable {
         dpDate.setEditable(false);
         LocalDate minDate = LocalDate.now();
         restrictDatePicker(dpDate, minDate);
+        
+        btnLagreOppdatering.setVisible(false); 
     } 
     
     @FXML
@@ -163,14 +168,11 @@ public class ArrangementerController implements Initializable {
     @FXML
     private void oppdater(ActionEvent event) throws InvalidArrangementFormatException{
         
-        
-        
         String[] split = listView.getSelectionModel().getSelectedItems().toString().split(",");
         
         if(split.length != 6) {
             
             throw new InvalidArrangementFormatException("Must use comma , to separate the three data fields");
-
         }
         String typeArrangement = split[0].split(":")[1];
         cbxTypeArrangement.setValue(typeArrangement);
@@ -189,23 +191,51 @@ public class ArrangementerController implements Initializable {
         dpDate.setValue(localDate);
         
         String tid = split[5].split(":")[1];
+        tid = tid.replace("\n", "");
+        tid = tid.replace("]", "");
+        System.out.print("etter split tt" + tid + "tt" + tid.length());
         spiTid.getValueFactory().setValue(Integer.parseInt(tid));
         
         btnRegistrer.setVisible(false);
-        btnSlett.setVisible(false);
+        btnSlett.setVisible(false); 
+        btnLagreOppdatering.setVisible(true); 
+    }
+    
+    @FXML
+    private void lagreOppdatering(ActionEvent event) throws IOException {
         
-//        SpinnerValueFactory<Integer> tidenValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(8, 20, Integer.parseInt(tid));
-//        spiTid.setValueFactory(tidenValueFactory);
-//        spiTid.setEditable(true);
+        listView.getItems().removeAll(listView.getSelectionModel().getSelectedItems());
+        StringBuilder sb2 = new StringBuilder();
         
+        for(Arrangement arrangement:listView.getItems()){
+            sb2.append(getCsvLine(arrangement));
+        }
         
+        File fileSlett = new File("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/arrangementer.csv");
+        BufferedWriter wSlett = new BufferedWriter(new FileWriter(fileSlett, false));
+        wSlett.write(sb2.toString());
+        wSlett.close();
         
-//        
-//        String str = listView.getSelectionModel().getSelectedItems();
-//        cbxTypeArrangement.setValue(listView.getSelectionModel().getSelectedItems());
-//        cbxSted.setValue(listView.getSelectionModel().getSelectedItems());
-        
+        if (validateNavn() && validateArtist() && validateDate()){
+            
+            Arrangement nyArrangement = new Arrangement((String)cbxTypeArrangement.getValue(), (String)cbxSted.getValue(), 
+                    txtNavn.getText(), txtArtist.getText(), dpDate.getValue(), spiTid.getValue());
 
+            //legger til data inn i arrangementer.csv filen min
+            String sb = getCsvLine(nyArrangement);
+
+            File fileRegistrer = new File("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/arrangementer.csv");
+            BufferedWriter wRegistrer = new BufferedWriter(new FileWriter(fileRegistrer, true));
+            wRegistrer.append(sb.toString());
+            wRegistrer.close();
+
+            arrayListArrangement.add(nyArrangement);
+            listView.getItems().add(nyArrangement); 
+            
+            btnRegistrer.setVisible(true);
+            btnSlett.setVisible(true); 
+            btnLagreOppdatering.setVisible(false); 
+        }
         
     }
     

@@ -199,7 +199,7 @@ public class BillettsalgController implements Initializable {
     }
     
     private boolean validateTelefonNummer(){
-        Pattern p = Pattern.compile("[0-9]*8");
+        Pattern p = Pattern.compile("[0-9]{8}");
         Matcher m = p.matcher(txtTelefonNummer.getText());
         if(m.find() && m.group().equals(txtTelefonNummer.getText())){
             return true;
