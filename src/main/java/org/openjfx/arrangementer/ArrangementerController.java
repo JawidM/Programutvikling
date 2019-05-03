@@ -7,7 +7,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -23,13 +22,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import javafx.util.Callback;
 
 public class ArrangementerController implements Initializable {
@@ -193,7 +190,6 @@ public class ArrangementerController implements Initializable {
         String tid = split[5].split(":")[1];
         tid = tid.replace("\n", "");
         tid = tid.replace("]", "");
-        System.out.print("etter split tt" + tid + "tt" + tid.length());
         spiTid.getValueFactory().setValue(Integer.parseInt(tid));
         
         btnRegistrer.setVisible(false);
@@ -295,17 +291,17 @@ public class ArrangementerController implements Initializable {
         datePicker.setDayCellFactory(dayCellFactory);
     }
     
-    private boolean validateNavn(){
+    private boolean validateNavn() {
         Pattern p = Pattern.compile("[a-zA-Z ]+");
         Matcher m = p.matcher(txtNavn.getText());
         if(m.find() && m.group().equals(txtNavn.getText())){
             return true;
-        }else{
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Validate arrangements navnet");
-                alert.setHeaderText(null);
-                alert.setContentText("Vennlist tast inn gyldig navn til arrangementet");
-                alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Validate arrangements navnet");
+            alert.setHeaderText(null);
+            alert.setContentText("Vennlist tast inn gyldig navn til arrangementet");
+            alert.showAndWait();
             
             return false;            
         }
@@ -316,12 +312,12 @@ public class ArrangementerController implements Initializable {
         Matcher m = p.matcher(txtArtist.getText());
         if(m.find() && m.group().equals(txtArtist.getText())){
             return true;
-        }else{
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Validate artist");
-                alert.setHeaderText(null);
-                alert.setContentText("Vennlist tast inn gyldig artist eller leder navn");
-                alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Validate artist");
+            alert.setHeaderText(null);
+            alert.setContentText("Vennlist tast inn gyldig artist eller leder navn");
+            alert.showAndWait();
             
             return false;            
         }
@@ -331,12 +327,12 @@ public class ArrangementerController implements Initializable {
         
         if(dpDate.getValue() != null){
             return true;
-        }else{
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Validate dato");
-                alert.setHeaderText(null);
-                alert.setContentText("Vennlist velg datoen");
-                alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Validate dato");
+            alert.setHeaderText(null);
+            alert.setContentText("Vennlist velg datoen");
+            alert.showAndWait();
             
             return false;            
         }

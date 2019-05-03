@@ -38,21 +38,18 @@ public class BillettReader {
     private static Billett parseBillett(String line) throws InvalidBillettFormatException {
         // split line string into seks using the separator ","
         String[] split = line.split(",");
-        if(split.length != 6) {
+        if(split.length != 7) {
             throw new InvalidBillettFormatException("Must use comma , to separate the three data fields");
         }
-        System.out.println(Arrays.toString(split));
         String arrangementInfo = split[0];
         String fornavn = split[1];
         String  etternavn = split[2];
         String epost = split[3];
-        
         int telefonNummer = parseNumber(split[4], "Tast inn telefonnummeret ");
-        
-        
-        int antallBilletter = parseNumber(split[5], "Velg antall billetter ");
+        String typeBillett = split[5];
+        int antallBilletter = parseNumber(split[6], "Velg antall billetter ");
 
-        return new Billett(arrangementInfo, fornavn, etternavn, epost, telefonNummer, antallBilletter);
+        return new Billett(arrangementInfo, fornavn, etternavn, epost, telefonNummer, typeBillett, antallBilletter);
     }
 
     private static int parseNumber(String str, String errorMessage) throws InvalidBillettFormatException {

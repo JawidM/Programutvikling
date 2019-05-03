@@ -3,8 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -29,16 +29,17 @@
       <TextField fx:id="txtArtist" layoutX="205.0" layoutY="269.0" prefHeight="27.0" prefWidth="160.0" />
       <DatePicker fx:id="dpDate" layoutX="205.0" layoutY="313.0" prefHeight="27.0" prefWidth="160.0" />
       <Spinner fx:id="spiTid" layoutX="205.0" layoutY="357.0" prefWidth="160.0" />
-      <Button fx:id="btnRegistrer" layoutX="42.0" layoutY="430.0" mnemonicParsing="false" onAction="#registrer" prefHeight="27.0" prefWidth="108.0" text="Registrer" />
+      <Button fx:id="btnRegistrer" layoutX="42.0" layoutY="430.0" mnemonicParsing="false" onAction="#registrer" prefHeight="27.0" prefWidth="127.0" text="Registrer" />
       <ListView fx:id="listView" layoutX="388.0" layoutY="92.0" prefHeight="589.0" prefWidth="597.0" />
+    
       <Text layoutX="534.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tilgjengelige Arrangementer">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Button fx:id="btnSlett" layoutX="43.0" layoutY="482.0" mnemonicParsing="false" onAction="#slett" prefHeight="27.0" prefWidth="108.0" text="Slett" />
-      <Button layoutX="42.0" layoutY="536.0" mnemonicParsing="false" onAction="#oppdater" prefHeight="27.0" prefWidth="108.0" text="Sett data inn" />
-      <Button fx:id="btnAvbrytt" layoutX="231.0" layoutY="482.0" mnemonicParsing="false" onAction="#avbrytt" prefHeight="27.0" prefWidth="108.0" text="Avbrytt" />
+      <Button fx:id="btnSlett" layoutX="43.0" layoutY="482.0" mnemonicParsing="false" onAction="#slett" prefHeight="27.0" prefWidth="127.0" text="Slett" />
+      <Button layoutX="42.0" layoutY="536.0" mnemonicParsing="false" onAction="#oppdater" prefHeight="27.0" prefWidth="127.0" text="Oppdater feltene" />
+      <Button fx:id="btnAvbrytt" layoutX="217.0" layoutY="482.0" mnemonicParsing="false" onAction="#avbrytt" prefHeight="27.0" prefWidth="127.0" text="Avbrytt" />
       <Button fx:id="btnLagreOppdatering" layoutX="217.0" layoutY="536.0" mnemonicParsing="false" onAction="#lagreOppdatering" prefHeight="27.0" prefWidth="136.0" text="Lagre Oppdatering" />
    </children>
 </AnchorPane>

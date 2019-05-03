@@ -7,14 +7,16 @@ public class Billett {
     private String etternavn;
     private String epost;
     private int telefonNummer;
+    private String typeBillett;
     private int antallBilletter;
 
-    public Billett(String arrangementInfo, String fornavn, String etternavn, String epost, int telefonNummer, int antallBilletter) {
+    public Billett(String arrangementInfo, String fornavn, String etternavn, String epost, int telefonNummer, String typeBillett, int antallBilletter) {
         this.arrangementInfo = arrangementInfo;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.epost = epost;
         this.telefonNummer = telefonNummer;
+        this.typeBillett = typeBillett;
         this.antallBilletter = antallBilletter;
     }
 
@@ -58,6 +60,16 @@ public class Billett {
         this.telefonNummer = telefonNummer;
     }
 
+    public String getTypeBillett() {
+        return typeBillett;
+    }
+
+    public void setTypeBillett(String typeBillett) {
+        this.typeBillett = typeBillett;
+    }
+    
+    
+    
     public int getAntallBilletter() {
         return antallBilletter;
     }
@@ -69,6 +81,7 @@ public class Billett {
     @Override
     public String toString() {
         return "Arrangementet som er valgt:" + arrangementInfo + 
-                "\n Kjøperen:" + fornavn +" "+ etternavn + "\n Epost adresse:" + epost + ", TelefonNummer:" + telefonNummer + "\n Antall billetter kjøpt:" + antallBilletter +"\n";
+                "\n Kjøperen:" + fornavn +" "+ etternavn + "\n Epost adresse:" + epost + ", TelefonNummer:" + telefonNummer + 
+                "\n Type billett:" + typeBillett + ", Antall billetter kjøpt:" + antallBilletter +"\n";
     }
 }

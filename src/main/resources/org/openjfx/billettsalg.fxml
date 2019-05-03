@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
@@ -10,35 +12,41 @@
 
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.billettsalg.BillettsalgController">
    <children>
-      <Text layoutX="98.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Billettsalg">
+      <Text layoutX="98.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Billettsalg">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="36.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velg Arrangementet du vil kjøpe billett for fra listen" />
-      <Text layoutX="513.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tilgjengelige Arrangementer" wrappingWidth="333.72235107421875">
+      <Text layoutX="36.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velg Arrangementet du vil kjøpe billett for fra listen" />
+      <Text layoutX="513.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tilgjengelige Arrangementer" wrappingWidth="333.72235107421875">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="35.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fornavn" />
-      <Text layoutX="32.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etternavn" />
-      <Text layoutX="35.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Epost" />
-      <Text layoutX="33.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefonnummer" />
-      <Text layoutX="35.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antall billetter" />
-      <Spinner fx:id="spiAntallBilletter" layoutX="185.0" layoutY="376.0" prefHeight="27.0" prefWidth="97.0" />
-      <TextField fx:id="txtFornavn" layoutX="183.0" layoutY="156.0" />
-      <TextField fx:id="txtEtternavn" layoutX="185.0" layoutY="210.0" />
-      <TextField fx:id="txtEpost" layoutX="185.0" layoutY="269.0" />
-      <TextField fx:id="txtTelefonNummer" layoutX="186.0" layoutY="324.0" />
-      <ListView fx:id="listView" layoutX="373.0" layoutY="71.0" prefHeight="272.0" prefWidth="618.0" />
-      <Text layoutX="605.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solgte Billetter" wrappingWidth="175.00264739990234">
+      <Text layoutX="35.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fornavn" />
+      <Text layoutX="32.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etternavn" />
+      <Text layoutX="35.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Epost" />
+      <Text layoutX="33.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefonnummer" />
+      <Text layoutX="35.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type Billett" wrappingWidth="69.4814453125" />
+      <Text layoutX="36.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antall billetter" />
+      <Label fx:id="lblPris" layoutX="37.0" layoutY="475.0" prefHeight="28.0" prefWidth="306.0" />
+      <ComboBox fx:id="cbxTypeBillett" layoutX="183.0" layoutY="407.0" onAction="#typeBillettValg" prefWidth="150.0" />
+      <Spinner fx:id="spiAntallBilletter" layoutX="186.0" layoutY="361.0" prefHeight="27.0" prefWidth="97.0" />
+      <TextField fx:id="txtFornavn" layoutX="183.0" layoutY="140.0" />
+      <TextField fx:id="txtEtternavn" layoutX="185.0" layoutY="194.0" />
+      <TextField fx:id="txtEpost" layoutX="185.0" layoutY="253.0" />
+      <TextField fx:id="txtTelefonNummer" layoutX="186.0" layoutY="308.0" />
+      <ListView fx:id="listView" layoutX="373.0" layoutY="55.0" prefHeight="272.0" prefWidth="618.0" />
+      <Text layoutX="605.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solgte Billetter" wrappingWidth="175.00264739990234">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <ListView fx:id="listViewBillett" layoutX="378.0" layoutY="414.0" prefHeight="274.0" prefWidth="612.0" />
-      <Button layoutX="32.0" layoutY="442.0" mnemonicParsing="false" onAction="#registrerBillett" text="Registrer " />
-      <Button fx:id="btnAvbrytt" layoutX="223.0" layoutY="442.0" mnemonicParsing="false" onAction="#avbrytt" prefHeight="27.0" prefWidth="78.0" text="Avbrytt" />
+      <ListView fx:id="listViewBillett" layoutX="378.0" layoutY="389.0" prefHeight="300.0" prefWidth="612.0" />
+      <Button fx:id="btnRegistrerBillett" layoutX="32.0" layoutY="525.0" mnemonicParsing="false" onAction="#registrerBillett" prefHeight="27.0" prefWidth="126.0" text="Registrer " />
+      <Button fx:id="btnAvbrytt" layoutX="206.0" layoutY="582.0" mnemonicParsing="false" onAction="#avbrytt" prefHeight="27.0" prefWidth="126.0" text="Avbrytt" />
+      <Button fx:id="btnSlettBillett" layoutX="33.0" layoutY="582.0" mnemonicParsing="false" onAction="#slettBillett" prefHeight="27.0" prefWidth="126.0" text="Slett" />
+      <Button layoutX="32.0" layoutY="637.0" mnemonicParsing="false" onAction="#oppdaterBillett" prefHeight="27.0" prefWidth="126.0" text="Oppdater feltene" />
+      <Button fx:id="btnLagreOppdateringBillett" layoutX="207.0" layoutY="637.0" mnemonicParsing="false" onAction="#lagreOppdateringBillett" prefHeight="27.0" prefWidth="136.0" text="Lagre Oppdatering" />
    </children>
 </AnchorPane>
