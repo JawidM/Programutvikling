@@ -72,8 +72,7 @@ public class Arrangement{
     @Override
     public String toString() {
         return "Type Arrangement:" + typeArrangement + ", Sted:" + sted + ", Navn:" + navn + 
-                ", Artist/Leder:" + artist + ", Dato:" + dato + ", Klokka:" + tid +"\n";
+                ", Artist/Leder:" + artist + ", Dato:" + dato + ", Klokka:" + tid;
     }
-    
     
 }  

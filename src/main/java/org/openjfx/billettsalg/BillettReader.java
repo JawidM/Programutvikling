@@ -15,16 +15,16 @@ public class BillettReader {
         BufferedReader reader = null;
 
         try {
-            reader = Files.newBufferedReader(Paths.get(path));
+            reader = Files.newBufferedReader(Paths.get(path).toAbsolutePath());
             
             String line = null; // read first line
 
             // read the rest and create Billett for each line
             int lineCounter = 1;
             while((line=reader.readLine()) != null) {
-                if (lineCounter %2 == 0) {
+                //if (lineCounter %2 == 0) {
                 billetter.add(parseBillett(line));
-                }
+                //}
                 lineCounter++;
             }
         } finally {
@@ -37,17 +37,18 @@ public class BillettReader {
 
     private static Billett parseBillett(String line) throws InvalidBillettFormatException {
         // split line string into seks using the separator ","
+        String[] splitArr = line.split("]");
+        String arrangementInfo = splitArr[0] + "] ";
         String[] split = line.split(",");
-        if(split.length != 7) {
+        if(split.length != 12) {
             throw new InvalidBillettFormatException("Must use comma , to separate the three data fields");
         }
-        String arrangementInfo = split[0];
-        String fornavn = split[1];
-        String  etternavn = split[2];
-        String epost = split[3];
-        int telefonNummer = parseNumber(split[4], "Tast inn telefonnummeret ");
-        String typeBillett = split[5];
-        int antallBilletter = parseNumber(split[6], "Velg antall billetter ");
+        String fornavn = split[6];
+        String  etternavn = split[7];
+        String epost = split[8];
+        int telefonNummer = parseNumber(split[9], "Tast inn telefonnummeret ");
+        String typeBillett = split[10];
+        int antallBilletter = parseNumber(split[11], "Velg antall billetter ");
 
         return new Billett(arrangementInfo, fornavn, etternavn, epost, telefonNummer, typeBillett, antallBilletter);
     }
@@ -56,7 +57,6 @@ public class BillettReader {
         int number;
         try {
             number = Integer.parseInt(str);
-            System.out.println(number);
         } catch (NumberFormatException e) {
             throw new InvalidBillettFormatException(errorMessage);
         }

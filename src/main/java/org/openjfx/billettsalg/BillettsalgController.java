@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
@@ -82,7 +83,7 @@ public class BillettsalgController implements Initializable {
         
         //Henter data fra arrangement.csv filen
         try {
-            arrayListArrangement = ArrangementReader.readArrangementer("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/arrangementer.csv");
+            arrayListArrangement = ArrangementReader.readArrangementer("src/main/resources/org/openjfx/arrangementer.csv");
         } catch (IOException e) {
             System.err.println("Could not read the requested file. Cause: " + e.getCause());
         } catch (InvalidArrangementFormatException e) {
@@ -92,7 +93,7 @@ public class BillettsalgController implements Initializable {
         
         //henter data fra billettsalg.csv filen
         try {
-            arrayListBillett = BillettReader.readBilletter("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/billettsalg.csv");
+            arrayListBillett = BillettReader.readBilletter("src/main/resources/org/openjfx/billettsalg.csv");
         } catch (IOException e) {
             System.err.println("Could not read the requested file. Cause: " + e.getCause());
         } catch (InvalidBillettFormatException e) {
@@ -117,7 +118,7 @@ public class BillettsalgController implements Initializable {
 
             String sb = getCsvLine(nyBillett);
 
-            File file = new File("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/billettsalg.csv");
+            File file = new File("src/main/resources/org/openjfx/billettsalg.csv");
             BufferedWriter w = new BufferedWriter(new FileWriter(file, true));
             w.append(sb.toString());
             w.close();
@@ -136,7 +137,7 @@ public class BillettsalgController implements Initializable {
             sb2.append(getCsvLine(billett));
         }
         
-        File file = new File("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/billettsalg.csv");
+        File file = new File("src/main/resources/org/openjfx/billettsalg.csv");
         BufferedWriter w = new BufferedWriter(new FileWriter(file, false));
         w.write(sb2.toString());
         w.close();
@@ -144,10 +145,35 @@ public class BillettsalgController implements Initializable {
     
     @FXML
     void oppdaterBillett(ActionEvent event) throws InvalidBillettFormatException {
+//        String[] splitArr = listViewBillett.getSelectionModel().getSelectedItems().toString().split("]");
+//        String arrangementInfo = splitArr[0] + "] ";
+//        String[] split = listViewBillett.getSelectionModel().getSelectedItems().toString().split(",");
+//        System.out.println(split[1] + " -- " + split[2] + " " + split[3] + " " + split[4] + " "+ split[5] + " " + split[6] + " " + split[7]);
+//        if(split.length != 12) {
+//            throw new InvalidBillettFormatException("Must use comma , to separate the three data fields");
+//        }
+//        String fornavn = split[6].split(":")[1];
+//        txtFornavn.setText(fornavn);
+//        
+//        String etternavn = split[7].split(":")[1];
+//        txtEtternavn.setText(etternavn);
+//        
+//        String epost = split[8].split(":")[1];
+//        txtEpost.setText(epost);
+//        
+//        String telefonNummer = split[9].split(":")[1];
+//        txtTelefonNummer.setText(telefonNummer);
+//        
+//        String typeBillett = split[10].split(":")[1];
+//        cbxTypeBillett.setValue(typeBillett);
+//        
+//        String antallBilletter = split[11].split(":")[1];
+//        cbxTypeBillett.setValue(antallBilletter);
+//        antallBilletter = antallBilletter.replace("\n", "");
+//        antallBilletter = antallBilletter.replace("]", "");
         
 //        String[] split = listViewBillett.getSelectionModel().getSelectedItems().toString().split(",");
-//        System.out.println(split.length);
-//        if(split.length != 7) {
+//        if(split.length != 12) {
 //            
 //            throw new InvalidBillettFormatException("Must use comma , to separate the three data fields");
 //        }
@@ -225,7 +251,7 @@ public class BillettsalgController implements Initializable {
         Matcher m = p.matcher(txtFornavn.getText());
         if(m.find() && m.group().equals(txtFornavn.getText())){
             return true;
-        }else{
+        } else {
             Alert alert = new Alert(AlertType.WARNING);
             alert.setTitle("Validate fornavn");
             alert.setHeaderText(null);

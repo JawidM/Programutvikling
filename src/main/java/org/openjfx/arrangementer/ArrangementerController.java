@@ -78,7 +78,7 @@ public class ArrangementerController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         try {
-            arrayListArrangement = ArrangementReader.readArrangementer("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/arrangementer.csv");
+            arrayListArrangement = ArrangementReader.readArrangementer("src/main/resources/org/openjfx/arrangementer.csv");
         } catch (IOException e) {
             System.err.println("Could not read the requested file. Cause: " + e.getCause());
         } catch (InvalidArrangementFormatException e) {
@@ -120,7 +120,7 @@ public class ArrangementerController implements Initializable {
             //legger til data inn i arrangementer.csv filen min
             String sb = getCsvLine(nyArrangement);
 
-            File file = new File("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/arrangementer.csv");
+            File file = new File("src/main/resources/org/openjfx/arrangementer.csv");
             BufferedWriter w = new BufferedWriter(new FileWriter(file, true));
             w.append(sb.toString());
             w.close();
@@ -156,7 +156,7 @@ public class ArrangementerController implements Initializable {
             sb2.append(getCsvLine(arrangement));
         }
         
-        File file = new File("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/arrangementer.csv");
+        File file = new File("src/main/resources/org/openjfx/arrangementer.csv");
         BufferedWriter w = new BufferedWriter(new FileWriter(file, false));
         w.write(sb2.toString());
         w.close();
@@ -207,7 +207,7 @@ public class ArrangementerController implements Initializable {
             sb2.append(getCsvLine(arrangement));
         }
         
-        File fileSlett = new File("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/arrangementer.csv");
+        File fileSlett = new File("src/main/resources/org/openjfx/arrangementer.csv");
         BufferedWriter wSlett = new BufferedWriter(new FileWriter(fileSlett, false));
         wSlett.write(sb2.toString());
         wSlett.close();
@@ -220,7 +220,7 @@ public class ArrangementerController implements Initializable {
             //legger til data inn i arrangementer.csv filen min
             String sb = getCsvLine(nyArrangement);
 
-            File fileRegistrer = new File("/Users/jawidmohammadi/Documents/GitHub/Programutvikling/src/main/resources/org/openjfx/arrangementer.csv");
+            File fileRegistrer = new File("src/main/resources/org/openjfx/arrangementer.csv");
             BufferedWriter wRegistrer = new BufferedWriter(new FileWriter(fileRegistrer, true));
             wRegistrer.append(sb.toString());
             wRegistrer.close();

@@ -43,3 +43,4 @@
       <Button fx:id="btnLagreOppdatering" layoutX="217.0" layoutY="536.0" mnemonicParsing="false" onAction="#lagreOppdatering" prefHeight="27.0" prefWidth="136.0" text="Lagre Oppdatering" />
    </children>
 </AnchorPane>
+

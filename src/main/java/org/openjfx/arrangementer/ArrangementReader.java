@@ -16,7 +16,7 @@ public class ArrangementReader {
         BufferedReader reader = null;
 
         try {
-            reader = Files.newBufferedReader(Paths.get(path));
+            reader = Files.newBufferedReader(Paths.get(path).toAbsolutePath());
             
             String line = null; // read first line
 
