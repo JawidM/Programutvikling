@@ -1,3 +1,3 @@
 # Programutvikling
 SemesterOppgaven
-En liten applikasjon der arrangementer og billettsalget til en kulturhus blir listet opp. 
+En liten applikasjon der arrangementer og billettsalget til kulturhus blir listet opp. 
